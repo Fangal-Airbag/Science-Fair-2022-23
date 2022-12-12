@@ -197,6 +197,10 @@ int main(int argc, char** argv)
 		SDL_RenderPresent(renderer);
 	}
 
+	SDL_DestroyTexture(tCar);
+
+	TTF_Quit();
+	IMG_Quit();
 	SDL_Quit();
 
 	return 0;

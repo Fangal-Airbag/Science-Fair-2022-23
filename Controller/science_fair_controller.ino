@@ -54,7 +54,6 @@ void setup()
 
 void loop()
 {
-  
   mpu.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
 
   if (Serial.available()) {
