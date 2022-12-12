@@ -59,116 +59,44 @@ void loop()
 
   if (Serial.available()) {
       data = Serial.read();
-      if (data == 'a')
-        Serial.println(ax);
-      if (data == 'b')
-        Serial.println(ay);
-      if (data == 'c')
-        Serial.println(az);
-      if (data == 'd')
-        Serial.println(gx);
-      if (data == 'e')
-        Serial.println(gy);
-      if (data == 'f')
-        Serial.println(gz);  
+      if (data == 'a') Serial.println(ax);
+      if (data == 'b') Serial.println(ay);
+      if (data == 'c') Serial.println(az);
+      if (data == 'd') Serial.println(gx);
+      if (data == 'e') Serial.println(gy);
+      if (data == 'f') Serial.println(gz);  
   }
   
-  if (digitalRead(BUTTON_A) == LOW)
-  {
-    Keyboard.press('t');
-  }
-  else
-  {
-    Keyboard.release('t');
-  }
+  if (digitalRead(BUTTON_A) == LOW) Keyboard.press('t');
+  else Keyboard.release('t');
 
-  if (digitalRead(BUTTON_B) == LOW)
-  {
-    Keyboard.press('h');
-  }
-  else
-  {
-    Keyboard.release('h');
-  }
+  if (digitalRead(BUTTON_B) == LOW) Keyboard.press('h');
+  else Keyboard.release('h');
 
-  if (digitalRead(BUTTON_C) == LOW)
-  {
-    Keyboard.press('g');
-  }
-  else
-  {
-    Keyboard.release('g');
-  }
+  if (digitalRead(BUTTON_C) == LOW) Keyboard.press('g');
+  else Keyboard.release('g');
 
-  if (digitalRead(BUTTON_D) == LOW)
-  {
-    Keyboard.press('f');
-  }
-  else
-  {
-    Keyboard.release('f');
-  }
+  if (digitalRead(BUTTON_D) == LOW) Keyboard.press('f');
+  else Keyboard.release('f');
 
-  if (digitalRead(BUTTON_E) == LOW)
-  {
-    Keyboard.press('1');
-  }
-  else
-  {
-    Keyboard.release('1');
-  }
+  if (digitalRead(BUTTON_E) == LOW) Keyboard.press('1');
+  else Keyboard.release('1');
 
-  if (digitalRead(BUTTON_F) == LOW)
-  {
-    Keyboard.press('2');
-  }
-  else
-  {
-    Keyboard.release('2');
-  }
+  if (digitalRead(BUTTON_F) == LOW) Keyboard.press('2');
+  else Keyboard.release('2');
 
-  if (digitalRead(BUTTON_G) == LOW)
-  {
-    Keyboard.press('3');
-  }
-  else
-  {
-    Keyboard.release('3');
-  }
+  if (digitalRead(BUTTON_G) == LOW) Keyboard.press('3');
+  else Keyboard.release('3');
 
-  if (analogRead(PIN_ANALOG_Y) > 600)
-  {
-    Keyboard.press('w');
-  }
-  else
-  {
-    Keyboard.release('w');
-  }
+  if (analogRead(PIN_ANALOG_Y) > 600)Keyboard.press('w');
+  else Keyboard.release('w');
+  
+  if (analogRead(PIN_ANALOG_Y) < 400) Keyboard.press('s');
+  else Keyboard.release('s');
 
-  if (analogRead(PIN_ANALOG_Y) < 400)
-  {
-    Keyboard.press('s');
-  }
-  else
-  {
-    Keyboard.release('s');
-  }
+  if (analogRead(PIN_ANALOG_X) > 600) Keyboard.press('d');
+  else Keyboard.release('d');
 
-  if (analogRead(PIN_ANALOG_X) > 600)
-  {
-    Keyboard.press('d');
-  }
-  else
-  {
-    Keyboard.release('d');
-  }
-
-  if (analogRead(PIN_ANALOG_X) < 400)
-  {
-    Keyboard.press('a');
-  }
-  else
-  {
-    Keyboard.release('a');
-  }
+  if (analogRead(PIN_ANALOG_X) < 400) Keyboard.press('a');
+  else Keyboard.release('a');
 }
